@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Forms_EFCore.Views.EditTeamPage"
+             Title="Edit team">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save"
+                     Icon="ic_save.png"
+                     Command="{Binding SaveTeamCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Entry Placeholder="Team Name/Title"
+                   Text="{Binding Title}"
+                   Margin="4" />
+
+            <Entry Placeholder="Manager name"
+                   Text="{Binding Manager}"
+                   Margin="4" />
+
+            <Entry Placeholder="City name"
+                   Text="{Binding City}"
+                   Margin="4" />
+
+            <Entry Placeholder="Name of the stadium"
+                   Text="{Binding StadiumName}"
+                   Margin="4" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

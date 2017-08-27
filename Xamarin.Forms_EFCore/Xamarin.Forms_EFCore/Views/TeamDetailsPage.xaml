@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Forms_EFCore.Views.TeamDetailsPage"
+             Title="About team">
+
+    <ContentPage.ToolbarItems>
+        
+        <ToolbarItem Text="Add player"
+                     Command="{Binding AddPlayerCommand}"
+                     Icon="ic_add_player.png" />
+
+        <ToolbarItem Text="Edit team"
+                     Icon="ic_edit.png"
+                     Command="{Binding EditTeamCommand}" />
+
+        <ToolbarItem Text="Delete team"
+                     Icon="ic_delete.png"
+                     Command="{Binding DeleteTeamCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+            
+        <StackLayout>
+
+                <Label Text="{Binding Title}"
+                       Margin="8"
+                       FontSize="Medium"
+                       Grid.Row="0" />
+
+                <Label Text="{Binding Manager}"
+                       Grid.Row="1"
+                       FontSize="Small"
+                       Margin="8" />
+
+                <Label Text="{Binding City}"
+                       Grid.Row="2"
+                       FontSize="Small"
+                       Margin="8" />
+
+                <Label Text="{Binding StadiumName}"
+                       Grid.Row="3"
+                       FontSize="Small"
+                       Margin="8" />
+
+                <StackLayout Grid.Row="4"
+                             Margin="8">
+
+                    <Label Text="Players:"
+                           FontSize="Small"
+                           Margin="4" />
+                    
+                    <ListView ItemsSource="{Binding Players}"
+                              HasUnevenRows="True"
+                              ItemTapped="OnPlayerTapped"
+                              Margin="4">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="StartAndExpand">
+
+                                        <Label Text="{Binding Name}"
+                                               FontSize="Small"
+                                               Margin="4" />
+
+                                        <Label Text="{Binding Position}"
+                                               FontSize="Small"
+                                               Margin="4" />
+
+                                        <Label Text="{Binding JerseyNumber}"
+                                               FontSize="Small"
+                                               Margin="4" />
+
+                                        <Image Source="ic_player_edit.png"
+                                               HeightRequest="17"
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Center"
+                                               Margin="4" />
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

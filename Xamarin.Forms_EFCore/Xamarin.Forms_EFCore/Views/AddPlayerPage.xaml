@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Forms_EFCore.Views.AddPlayerPage"
+             Title="Add new player">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save"
+                     Icon="ic_save.png"
+                     Command="{Binding SavePlayerCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Label Text="{Binding TeamName, StringFormat='New player for: {0}'}"
+                   Margin="4,12,4,4" />
+
+            <Entry Placeholder="Full name"
+                   Text="{Binding Name}"
+                   Margin="4" />
+
+            <Entry Placeholder="Position"
+                   Text="{Binding Position}"
+                   Margin="4" />
+
+            <Entry Placeholder="Jersey Number"
+                   Text="{Binding JerseyNumber}"
+                   Margin="4" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
